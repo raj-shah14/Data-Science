@@ -1,0 +1,94 @@
+<html>
+<body>
+<script>
+$(document).ready(function () {
+ 
+var list1 = document.getElementById('firstList');
+ 
+list1.options[0] = new Option('--Select--', '');
+list1.options[1] = new Option('Snacks', 'Snacks');
+list1.options[2] = new Option('Drinks', 'Drinks');
+});
+
+function validate(evt) {
+  var theEvent = evt || window.event;
+
+  // Handle paste
+  if (theEvent.type === 'paste') {
+      key = event.clipboardData.getData('text/plain');
+  } else {
+  // Handle key press
+      var key = theEvent.keyCode || theEvent.which;
+      key = String.fromCharCode(key);
+  }
+  var regex = /[0-9]|\./;
+  if( !regex.test(key) ) {
+    theEvent.returnValue = false;
+    if(theEvent.preventDefault) theEvent.preventDefault();
+  }
+}
+</script>
+    <h2>Salary Predictions</h2>
+    <div class="col-md-4">
+    <form>  
+    <h4>Job Type</h4>
+    <select class="form-control"  id='firstList' name='firstList'>
+        <option value=""></option>
+        <option value="jobType_CEO">CEO</option>
+        <option value="jobType_CFO">CFO</option>
+        <option value="jobType_CTO">CTO</option>
+        <option value="jobType_JANITOR">Janitor</option>
+        <option value="jobType_JUNIOR">Junior</option>
+        <option value="jobType_MANAGER">Manager</option>
+        <option value="jobType_SENIOR">Senior</option>
+        <option value="jobType_VICE_PRESIDENT">Vice President</option>
+    </select>
+     
+    <h4>Major</h4>
+    <select class="form-control"  id='secondList' name='secondList' >
+        <option value=""></option>
+        <option value="major_BIOLOGY">Biology</option>
+        <option value="major_BUSINESS">Business</option>
+        <option value="major_CHEMISTRY">Chemistry</option>
+        <option value="major_COMPSCI">Computer Science</option>
+        <option value="major_ENGINEERING">Engineering</option>
+        <option value="major_LITERATURE">Literature</option>
+        <option value="major_MATH">Math</option>
+        <option value="major_PHYSICS">Physics</option>
+        <option value="major_NONE">None</option>
+    </select>
+
+    <h4>Degree</h4>
+    <select class="form-control"  id='thirdList' name='thirdList' >
+        <option value=""></option>
+        <option value="degree_BACHELORS">Bachelors</option>
+        <option value="degree_MASTERS">Business</option>
+        <option value="degree_DOCTORAL">Ph.D</option>
+        <option value="degree_HIGH_SCHOOL">Computer Science</option>
+        <option value="degree_NONE">None</option>
+    </select>
+
+
+    <h4>Industry</h4>
+    <select class="form-control"  id='fourthList' name='fourthList'>
+        <option value=""></option>
+        <option value="industry_AUTO">Auto</option>
+        <option value="industry_EDUCATION">Education</option>
+        <option value="industry_FINANCE">Finance</option>
+        <option value="industry_HEALTH">Health</option>
+        <option value="industry_OIL">Oil</option>
+        <option value="industry_SERVICE">Service</option>
+        <option value="industry_WEB">Web</option>
+    </select>
+
+    <h4>Years of Experience</h4>
+    <input type="text" name="Experience" onkeypress='validate(event)' ><br>
+     
+    <h4>Miles from Metropolis</h4>
+    <input type="text" name="Miles" onkeypress='validate(event)' ><br>
+    
+    <input type="submit" value="Submit">
+    </form>
+    </div>
+</body>
+</html>
