@@ -17,4 +17,6 @@ Performed EDA to get more insight into the data, check for correlation and engin
 ## Summary
 Successfully completed the analysis and training for Salary Prediction problem for different job type. Performed Exploratory Data Analysis to get insights from the data and then preprocessed the data accordingly inorder to fit a model. Established a **Baseline Linear regression** model and observed MSE of **383**. Improved the Baseline score by chossing different models and doing cross Validation and achieved the **Final MSE of 355 using XGBoost** Model. Automated the complete pipeline and saved the predictions onto the disk.
 
+## Deployment
+Developed a python Flask webapp and deployed the model on server.
 ![](https://github.com/raj-shah14/Data-Science/blob/master/Salary%20Prediction/salary.gif)
