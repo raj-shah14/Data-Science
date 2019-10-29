@@ -1,14 +1,6 @@
 <html>
 <body>
 <script>
-$(document).ready(function () {
- 
-var list1 = document.getElementById('firstList');
- 
-list1.options[0] = new Option('--Select--', '');
-list1.options[1] = new Option('Snacks', 'Snacks');
-list1.options[2] = new Option('Drinks', 'Drinks');
-});
 
 function validate(evt) {
   var theEvent = evt || window.event;
@@ -30,7 +22,7 @@ function validate(evt) {
 </script>
     <h2>Salary Predictions</h2>
     <div class="col-md-4">
-    <form>  
+    <form method="POST" action="{{ url_for('predict') }}">  
     <h4>Job Type</h4>
     <select class="form-control"  id='firstList' name='firstList'>
         <option value=""></option>
@@ -62,9 +54,9 @@ function validate(evt) {
     <select class="form-control"  id='thirdList' name='thirdList' >
         <option value=""></option>
         <option value="degree_BACHELORS">Bachelors</option>
-        <option value="degree_MASTERS">Business</option>
+        <option value="degree_MASTERS">Masters</option>
         <option value="degree_DOCTORAL">Ph.D</option>
-        <option value="degree_HIGH_SCHOOL">Computer Science</option>
+        <option value="degree_HIGH_SCHOOL">High School</option>
         <option value="degree_NONE">None</option>
     </select>
 
@@ -87,7 +79,7 @@ function validate(evt) {
     <h4>Miles from Metropolis</h4>
     <input type="text" name="Miles" onkeypress='validate(event)' ><br>
     
-    <input type="submit" value="Submit">
+    <input class='btn btn-primary' type="submit" value="Submit">
     </form>
     </div>
 </body>
